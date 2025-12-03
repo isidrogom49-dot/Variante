@@ -9,14 +9,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // TYPING EFFECT HERO
   const textEl = document.querySelector(".typing-text");
-  const textArray = ["Tecnología que transforma el futuro", "Innovación aplicada a proyectos reales"];
-  let txtIndex = 0, charIndex = 0;
+  const textArray = [
+    "Tecnología que transforma el futuro",
+    "Innovación aplicada a proyectos reales"
+  ];
+  let txtIndex = 0;
+  let charIndex = 0;
+
   function type() {
-    if(txtIndex >= textArray.length){ txtIndex = 0; }
+    if (!textEl) return; // Seguridad por si el elemento no existe
+    if (txtIndex >= textArray.length) txtIndex = 0;
+
     textEl.textContent = textArray[txtIndex].substring(0, charIndex);
     charIndex++;
-    if(charIndex > textArray[txtIndex].length){ charIndex=0; txtIndex++; setTimeout(type,1500); }
-    else { setTimeout(type,80); }
+
+    if (charIndex > textArray[txtIndex].length) {
+      charIndex = 0;
+      txtIndex++;
+      setTimeout(type, 1500); // Pausa antes de siguiente frase
+    } else {
+      setTimeout(type, 80); // Velocidad de escritura
+    }
   }
   type();
 
@@ -27,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      card.style.transform = `perspective(700px) rotateY(${(x-rect.width/2)/25}deg) rotateX(${-(y-rect.height/2)/25}deg) scale(1.05)`;
+      card.style.transform = `perspective(700px) rotateY(${(x - rect.width / 2) / 25}deg) rotateX(${-(y - rect.height / 2) / 25}deg) scale(1.05)`;
     });
     card.addEventListener("mouseleave", () => {
       card.style.transform = "perspective(700px) rotateY(0deg) rotateX(0deg) scale(1)";
@@ -47,6 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // INICIALIZAR AOS
-  AOS.init({duration:1000, once:true});
+  // INICIALIZAR AOS (animaciones al hacer scroll)
+  if (typeof AOS !== "undefined") {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }
+
 });
