@@ -3,129 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>System Innovation</title>
+  <title>System Innovation - Portada</title>
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- ICONOS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-container">
-      <a href="#" class="brand">
-        <img src="img/L.E.jpg" alt="Logo" class="logo">
-        <span>SYSTEM INNOVATION</span>
-      </a>
-      <nav class="nav" id="navMenu">
-        <a href="#" class="active">&#8962; Inicio</a>
-        <a href="#">GTU</a>
-        <a href="#">Proyectos</a>
-        <a href="#">Sobre Nosotros</a>
-      </nav>
-      <div class="menu-toggle" id="menuToggle">&#9776;</div>
+<!-- --------------------------------------------------
+                     HEADER (MODIFICADO)
+--------------------------------------------------- -->
+<header class="header">
+  <div class="header-container">
+    <a href="index.html" class="logo">SYSTEM INNOVATION</a>
+
+    <nav class="nav" id="navMenu">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="sobre.html">Sobre Nosotros</a>
+    </nav>
+
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- HERO CON VIDEO Y LATERALES -->
-  <section class="hero">
-    <div class="hero-wrapper">
-      <div class="hero-video-container">
-        <video autoplay muted loop class="hero-video">
-          <source src="video/vi.mp4" type="video/mp4">
-          Tu navegador no soporta video.
-        </video>
-        <div class="hero-overlay"></div>
-      </div>
-      <div class="hero-side-info left" data-aos="fade-right">
-        <h3>Innovación</h3>
-        <p>Proyectos que transforman el futuro.</p>
-      </div>
-      <div class="hero-side-info right" data-aos="fade-left">
-        <h3>Colaboración</h3>
-        <p>Únete a nuestro equipo y crea con nosotros.</p>
-      </div>
-      <div class="hero-content" data-aos="fade-up">
-        <h1 class="hero-title">Bienvenido a System Innovation</h1>
-        <p class="hero-subtitle typing-text"></p>
-        <a href="#" class="btn-hero">Participa Ahora</a>
-      </div>
+<!-- --------------------------------------------------
+                   HERO PRINCIPAL
+--------------------------------------------------- -->
+<section class="hero">
+  <canvas id="particles"></canvas>
+
+  <div class="hero-content">
+    <h1 class="hero-title">Transformando soluciones en tecnología y eficiencia</h1>
+    <p class="hero-sub">Bienvenido</p>
+  </div>
+</section>
+
+<!-- --------------------------------------------------
+                   BANNERS ESTADÍSTICAS
+--------------------------------------------------- -->
+<section class="stats-section">
+  <h2 class="section-title">Nuestras estadísticas</h2>
+
+  <div class="stats-container">
+    <div class="stat-card">
+      <i class="fas fa-folder-open"></i>
+      <h3>+25</h3>
+      <p>Proyectos visualizados</p>
     </div>
-  </section>
 
-  <!-- NUESTROS VALORES -->
-  <section class="values container">
-    <h2 class="section-title">Nuestro Enfoque</h2>
-    <div class="values-grid">
-      <div class="value-card" data-aos="fade-up">
-        <h3>Innovación</h3>
-        <p>Proyectos creativos y funcionales enfocados en tecnología de punta.</p>
-      </div>
-      <div class="value-card" data-aos="fade-up" data-aos-delay="150">
-        <h3>Aprendizaje</h3>
-        <p>Aplicamos conocimientos en situaciones reales y proyectos integradores.</p>
-      </div>
-      <div class="value-card" data-aos="fade-up" data-aos-delay="300">
-        <h3>Colaboración</h3>
-        <p>Trabajo en equipo y metodologías ágiles para mejores resultados.</p>
-      </div>
+    <div class="stat-card">
+      <i class="fas fa-users"></i>
+      <h3>+100</h3>
+      <p>Estudiantes participando</p>
     </div>
-  </section>
 
-  <!-- PROYECTOS DESTACADOS -->
-  <section class="projects container">
-    <h2 class="section-title">Proyectos Destacados</h2>
-    <div class="projects-grid">
-      <div class="project-card" data-aos="fade-up">
-        <span class="top-label">TOP</span>
-        <img src="img/1.jpg" alt="Proyecto 1">
-        <h3>Proyecto 1</h3>
-        <p>Proyecto innovador desarrollado por nuestro GTU.</p>
-      </div>
-      <div class="project-card" data-aos="fade-up" data-aos-delay="150">
-        <span class="top-label">TOP</span>
-        <img src="img/2.jpg" alt="Proyecto 2">
-        <h3>Proyecto 2</h3>
-        <p>Proyecto destacado por su aplicación práctica y diseño innovador.</p>
-      </div>
-      <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-        <span class="top-label">TOP</span>
-        <img src="img/3.jpg" alt="Proyecto 3">
-        <h3>Proyecto 3</h3>
-        <p>Proyecto integrador que combina aprendizaje y colaboración en equipo.</p>
-      </div>
+    <div class="stat-card">
+      <i class="fas fa-lightbulb"></i>
+      <h3>+80%</h3>
+      <p>Innovación aplicada</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA FINAL -->
-  <section class="cta">
-    <h2>Únete a nuestros proyectos y transforma el futuro</h2>
-    <a href="#" class="btn-cta">Participar Ahora</a>
-  </section>
+<!-- --------------------------------------------------
+                   BANNERS EXTRA
+--------------------------------------------------- -->
+<section class="banners-extra">
+  <div class="banner-card">
+    <i class="fas fa-eye"></i>
+    <h3>Visualización de Proyectos</h3>
+    <p>Este sitio está dedicado a mostrar los proyectos integradores.</p>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <h4>Enlaces</h4>
-        <a href="#">Inicio</a>
-        <a href="#">GTU</a>
-        <a href="#">Proyectos</a>
-        <a href="#">Sobre Nosotros</a>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <p>Email: info.gtu@gmail.com</p>
-        <p>Tel: +52 722 945 8731</p>
-      </div>
-      <div>
-        <h4>Redes Sociales</h4>
-        <p>Facebook | Instagram | WhatsApp</p>
-      </div>
+  <div class="banner-card">
+    <i class="fas fa-gears"></i>
+    <h3>Desarrollo Tecnológico</h3>
+    <p>Plataforma estructurada para mostrar avances reales.</p>
+  </div>
+
+  <div class="banner-card">
+    <i class="fas fa-chart-line"></i>
+    <h3>Crecimiento Académico</h3>
+    <p>Apoyo para mejorar la presentación y exposición de proyectos.</p>
+  </div>
+</section>
+
+<!-- --------------------------------------------------
+                   TARJETAS INFORMATIVAS
+--------------------------------------------------- -->
+<section class="cards-info">
+  <h2 class="section-title">¿Qué encontrarás aquí?</h2>
+
+  <div class="card-grid">
+    <div class="info-card">
+      <i class="fas fa-code"></i>
+      <h3>Proyectos Integradores</h3>
+      <p>Consulta los desarrollos realizados por los estudiantes.</p>
     </div>
-    <p>© 2025 System Innovation. Todos los derechos reservados.</p>
-  </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/script.js"></script>
+    <div class="info-card">
+      <i class="fas fa-puzzle-piece"></i>
+      <h3>Organización Clara</h3>
+      <p>Todo se encuentra distribuido para una visualización profesional.</p>
+    </div>
+
+    <div class="info-card">
+      <i class="fas fa-laptop-file"></i>
+      <h3>Documentación</h3>
+      <p>Cada proyecto puede incluir anexos y reportes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- --------------------------------------------------
+                        FOOTER
+--------------------------------------------------- -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h4>Enlaces</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="sobre.html">Sobre Nosotros</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Redes Sociales</h4>
+      <ul>
+        <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-envelope"></i> contacto@systeminnovation.com</a></li>
+        <li><a href="#"><i class="fas fa-phone"></i> +52 722 000 0000</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="footer-copy">© 2025 System Innovation — Todos los derechos reservados</p>
+</footer>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>

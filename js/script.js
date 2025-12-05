@@ -1,53 +1,54 @@
-document.addEventListener("DOMContentLoaded", () => {
+// ------------------------------
+// PARTICULAS EN EL HERO
+// ------------------------------
+const canvas = document.getElementById("particles"); // ID corregido
+const ctx = canvas.getContext("2d");
 
-  // MENU HAMBURGUESA
-  const hamburger = document.getElementById("menuToggle");
-  const navMenu = document.getElementById("navMenu");
-  hamburger.addEventListener("click", () => navMenu.classList.toggle("show"));
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
 
-  // TYPING HERO
-  const textEl = document.querySelector(".typing-text");
-  const textArray = [
-    "Tecnología que transforma el futuro",
-    "Innovación aplicada a proyectos reales"
-  ];
-  let txtIndex = 0, charIndex = 0;
-  function type() {
-    if (!textEl) return;
-    if (txtIndex >= textArray.length) txtIndex = 0;
-    textEl.textContent = textArray[txtIndex].substring(0,charIndex);
-    charIndex++;
-    if (charIndex > textArray[txtIndex].length) {
-      charIndex = 0; txtIndex++;
-      setTimeout(type, 1500);
-    } else setTimeout(type,80);
-  }
-  type();
+resize();
+window.addEventListener("resize", resize);
 
-  // EFECTOS VALORES
-  document.querySelectorAll(".value-card").forEach(card => {
-    card.addEventListener("mousemove", e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.transform = `perspective(700px) rotateY(${(x-rect.width/2)/25}deg) rotateX(${-(y-rect.height/2)/25}deg) scale(1.05)`;
-    });
-    card.addEventListener("mouseleave", () => card.style.transform="perspective(700px) rotateY(0deg) rotateX(0deg) scale(1)");
+// Crear partículas
+const particles = [];
+for (let i = 0; i < 120; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 3 + 1,
+    dx: (Math.random() - 0.5) * 0.5,
+    dy: (Math.random() - 0.5) * 0.5
+  });
+}
+
+// Animación de partículas
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#34d399";
+
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
   });
 
-  // EFECTOS PROYECTOS
-  document.querySelectorAll(".project-card").forEach(card => {
-    card.addEventListener("mouseenter", () => {
-      card.style.transform="translateY(-15px) scale(1.03)";
-      card.style.boxShadow="0 20px 50px rgba(0,0,0,0.15)";
-    });
-    card.addEventListener("mouseleave", () => {
-      card.style.transform="translateY(0px) scale(1)";
-      card.style.boxShadow="0 10px 30px rgba(0,0,0,0.08)";
-    });
-  });
+  requestAnimationFrame(animate);
+}
 
-  // ANIMACIONES AOS
-  if (typeof AOS !== "undefined") AOS.init({ duration:1000, once:true });
+animate();
 
+// ------------------------------
+// MENU RESPONSIVO FUNCIONAL
+// ------------------------------
+document.getElementById("menuToggle").addEventListener("click", () => {
+  document.getElementById("navMenu").classList.toggle("show");
 });
